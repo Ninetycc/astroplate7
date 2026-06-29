@@ -1,4 +1,3 @@
-# astroplate7
 <h1 align=center>Astro + Tailwind CSS + TypeScript Starter and Boilerplate</h1>
 
 <p align=center>Astroplate is a free starter template built with Astro, TailwindCSS & TypeScript, providing everything you need to jumpstart your Astro project and save valuable time.</p>

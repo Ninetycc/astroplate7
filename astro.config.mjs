@@ -10,6 +10,8 @@ import sharp from "sharp";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 import { unified } from "@astrojs/markdown-remark";
+import rehypeExternalLinks from 'rehype-external-links';
+
 
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
@@ -49,7 +51,7 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
+  site: config.site.base_url ? config.site.base_url : "https://astroplate7.peter-244.workers.dev",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
@@ -69,7 +71,9 @@ export default defineConfig({
         "@/shortcodes/Tab",
       ],
     }),
-    mdx(),
+    mdx({
+          rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: [] }]],
+        }),
   ],
   markdown: {
     processor: unified({
@@ -78,6 +82,7 @@ export default defineConfig({
         [remarkCollapse, { test: "Table of contents" }],
       ],
     }),
+    rehypePlugins: [[rehypeExternalLinks, { target: '_blank', rel: [] }]],
     shikiConfig: { theme: "one-dark-pro", wrap: true },
   },
 });
