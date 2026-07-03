@@ -51,7 +51,7 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "https://astroplate7.peter-244.workers.dev",
+  site: config.site.base_url ? config.site.base_url : "https://1964.bid",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
