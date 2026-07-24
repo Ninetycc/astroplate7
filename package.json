@@ -63,7 +63,7 @@
     "tailwindcss": "^4.3.1",
     "turndown": "^7.2.4",
     "typescript": "^6.0.3",
-    "wrangler": "^4.112.0"
+    "wrangler": "^4.113.0"
   },
   "overrides": {
     "typescript": "$typescript",
