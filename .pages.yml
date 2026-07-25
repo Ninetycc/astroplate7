@@ -4,44 +4,42 @@ media:
 
 content:
   - name: blog
-    label: Blog
+    label: Blog Posts
     type: collection
     path: src/content/blog
     filename: '{fields.title}'
     fields:
       - name: title
-        label: Title
+        label: Post Title
         type: string
+      - name: meta_title
+        label: Meta Title (SEO)
+        type: string
+      - name: description
+        label: Meta Description
+        type: text
+      - name: date
+        label: Publish Date
+        type: date
       - name: image
-        label: Image
+        label: Featured Image
         type: image
-      - name: body
-        label: Body
-        type: rich-text
-  - name: authors
-    label: Authors
-    type: collection
-    path: src/content/authors
-    filename: '{fields.title}'
-    fields:
-      - name: title
-        label: Name
+      - name: author
+        label: Author Name
         type: string
-      - name: image
-        label: Avatar
-        type: image
+      - name: categories
+        label: Categories
+        type: list
+        field:
+          type: string
+      - name: tags
+        label: Tags
+        type: list
+        field:
+          type: string
+      - name: draft
+        label: Draft Mode
+        type: boolean
       - name: body
-        label: Bio
-        type: rich-text
-  - name: pages
-    label: Pages
-    type: collection
-    path: src/content/pages
-    filename: '{fields.title}'
-    fields:
-      - name: title
-        label: Title
-        type: string
-      - name: body
-        label: Body
+        label: Article Content
         type: rich-text
